@@ -17,20 +17,27 @@ int main(){
         switch (opcao){ //switch tem um menor tempo de execução do que varios if's
         
         case 1:
+            system("cls");
             //pedir um nome de um arquivo que está na pasta /TCD/
             break;
 
         case 2:
+            
+            system("cls");
+            
             if(fp == NULL){
-                pritnf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
+                printf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
             }else{
                 submenu2();
             }
             break;
         
         case 3:
+
+            system("cls");
+            
             if(fp == NULL){
-                pritnf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
+                printf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
             }else{
                 submenu3();
             }
@@ -38,11 +45,18 @@ int main(){
         
         case 4:
 
+            system("cls");
             //esta opcao so pode ser executada se algum algoritmo for executado anteriormente.
 
             break;
+        
+        case 5:
+            printf("Saindo\n");
+            break;
+
 
         default:
+            system("cls");
             printf("Opção inválida!\n");
             break;
         }

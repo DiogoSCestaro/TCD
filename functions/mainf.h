@@ -1,2 +1,3 @@
 void menu();
-void submenu();
+void submenu2();
+void submenu3();
