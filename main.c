@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include "functions/mainf.h"
+#include <stdlib.h>
+
+int main(){
+
+    system("chcp 1252 > nul"); //altera o terminal para portugues
+
+    int opcao = 0;
+    FILE *fp; //arquivo a ser carregado
+
+    while (opcao!=5){
+  
+        menu();
+        scanf("%d",&opcao);
+        
+        switch (opcao){ //switch tem um menor tempo de execução do que varios if's
+        
+        case 1:
+            //pedir um nome de um arquivo que está na pasta /TCD/
+            break;
+
+        case 2:
+            if(fp == NULL){
+                pritnf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
+            }else{
+                submenu2();
+            }
+            break;
+        
+        case 3:
+            if(fp == NULL){
+                pritnf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
+            }else{
+                submenu3();
+            }
+            break;
+        
+        case 4:
+
+            //esta opcao so pode ser executada se algum algoritmo for executado anteriormente.
+
+            break;
+
+        default:
+            printf("Opção inválida!\n");
+            break;
+        }
+    }
+    
+    //A opção 5, antes de ser executada, deverá liberar toda a memora alocada
+    
+
+    return 0;
+}
