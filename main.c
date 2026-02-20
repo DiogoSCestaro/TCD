@@ -6,18 +6,25 @@ int main(){
 
     system("chcp 1252 > nul"); //altera o terminal para portugues
 
-    int opcao = 0;
-    FILE *fp; //arquivo a ser carregado
+    FILE *fp = NULL;
+    char arq[50];
+
+    int opcao = 0, subop = 0;//arquivo a ser carregado
 
     while (opcao!=5){
   
         menu();
-        scanf("%d",&opcao);
-        
+        if (scanf("%d", &opcao) != 1) { // se o que o usuario digitar não for um numero inteiro 
+            printf("Entrada inválida!\n");
+            while (getchar() != '\n'); // limpa buffer
+            opcao = 0;
+        }
         switch (opcao){ //switch tem um menor tempo de execução do que varios if's
         
         case 1:
             system("cls");
+            fgets(arq, 50, stdin);
+            fp = fopen(arq,"r");
             //pedir um nome de um arquivo que está na pasta /TCD/
             break;
 
@@ -25,22 +32,51 @@ int main(){
             
             system("cls");
             
-            if(fp == NULL){
-                printf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
+            if(fp == NULL){ //não abriu o arquivo
+                printf("Erro ao abrir arquivo.\n");
             }else{
                 submenu2();
             }
+            
+        
             break;
         
         case 3:
 
             system("cls");
             
-            if(fp == NULL){
-                printf("Arquivo não encontrado ou nenhum arquivo carregado!\n");
+            if(fp == NULL){ //não abriu o arquivo
+                printf("Erro ao abrir arquivo.\n");
             }else{
                 submenu3();
+                scanf("%d",&subop);
+
+                switch (subop){
+                    case 1:
+                        
+                        int posicao = buscaLinear(); //PARAMETROS DA F: array do arquivo juntamente o elemento que se quer encontrar
+                        if(posicao!=-1){
+                            printf("O elemento se encontra na posição %d\n",posicao);
+                        }else{
+                            printf("Posicao nao encontrada ou nao existente!\n");
+                        }
+                        break;
+                    case 2:
+                        
+                        int posicao = buscaBin(); //PARAMETROS DA F: array do arquivo juntamente o elemento que se quer encontrar
+                        if(posicao!=-1){
+                            printf("O elemento se encontra na posição %d\n",posicao);
+                        }else{
+                            printf("Posicao nao encontrada ou nao existente!\n");
+                        }
+                        break;
+                    
+                    default:
+                        break;
+                }
             }
+            
+
             break;
         
         case 4:
@@ -62,6 +98,7 @@ int main(){
         }
     }
     
+    fclose(fp); //fecha o arquivo aberto
     //A opção 5, antes de ser executada, deverá liberar toda a memora alocada
     
 

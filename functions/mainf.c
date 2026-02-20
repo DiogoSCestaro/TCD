@@ -8,12 +8,12 @@ void menu(){
 
 void submenu2(){
 
-    printf("1. Busca linear\n2. Busca binária");
+    printf("1. Busca linear\n2. Busca binária\n");
 
 }
 
 void submenu3(){
 
-    printf("1. Insert\n2. Sort\n3. Selection\n4. Merge\n5. Quick\n6. EXTRA(EM DESENVOLVIMENTO)");
+    printf("1. Insert\n2. Sort\n3. Selection\n4. Merge\n5. Quick\n6. EXTRA(EM DESENVOLVIMENTO)\n");
 
 }
