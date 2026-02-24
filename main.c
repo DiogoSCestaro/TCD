@@ -34,6 +34,7 @@ int main()
             case 1:
                 system("cls");
                 printf("Insira o nome do arquivo:\n ");
+                while (getchar() != '\n'); // limpa buffer
                 fgets(arq, 50, stdin);
                 fp = fopen(arq,"r");
                 //pedir um nome de um arquivo que está na pasta /TCD/
