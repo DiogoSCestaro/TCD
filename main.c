@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include "functions/mainf.h"
+#include "functions/buscaf.h"
+#include "functions/ordenaf.h"
+#include <stdlib.h>
+
 int main()
 {
 
