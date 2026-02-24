@@ -37,13 +37,13 @@ int main()
                 fgets(arq, 50, stdin);
                 fp = fopen(arq,"r");
                 //pedir um nome de um arquivo que está na pasta /TCD/
-                while(fscanf(fp,"%d",&vet[i])!=NULL) // pegar os dados dentro do arquivo e passar para o vetor
+                while(fscanf(fp,"%d",&vet[i])==1) // pegar os dados dentro do arquivo e passar para o vetor
                 {
                     i++; // rodar o vetor
                     tam++; // aumentar o tamanho
-                    fp = realloc(fp,tam*sizeof(int));
+                    vet = realloc(fp,tam*sizeof(int));
                 }
-                fp = realloc(fp,(tam-1)*sizeof(int));//reajustar o tamanho para nao sobrar nada
+                vet = realloc(fp,(tam-1)*sizeof(int));//reajustar o tamanho para nao sobrar nada
                 break;
 
             case 2:
