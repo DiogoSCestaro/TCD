@@ -31,13 +31,12 @@ void bobbleSort(int a[],int n)
 void insertSort(int vetor[],int size)
 {
     int aux,j;
-    for(int i=0;i<size-1;i++)
+    for(int i=1;i<size-1;i++)
     {
-        if(vetor[i]>vetor[i+1])
+        if(vetor[i]<vetor[i-1])
         {
-            aux = vetor[i+1];
-            vetor[i+1] = vetor[i];
-            vetor[i] = aux;
+            aux = vetor[i];
+            vetor[i] = vetor[i-1];
             j = i - 1;
             while(j>=0)
             {
